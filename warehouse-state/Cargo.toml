@@ -1,0 +1,17 @@
+[package]
+name = "warehouse-state"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dotenv = "0.15.0"
+prometheus = "0.13.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.82"
+serde_test = "1.0.145"
+strum = "0.24.0"
+strum_macros = "0.24.0"
+tracing = "0.1.26"
+tracing-subscriber = "0.3.9"
