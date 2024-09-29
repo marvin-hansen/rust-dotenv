@@ -3,17 +3,11 @@ load("@envfile//:environment.bzl", "SOME_ENV")
 
 package(default_visibility = ["//visibility:public"])
 
-genrule(
-  name = "gen_env",
-  outs = [ "env.txt" ],
-  cmd = "FOOBAR=\"42\" > $@",
-)
-
 rust_library(
     name = "lib",
     srcs = glob(["src/**/*.rs"]),
     deps = [
-        "@rust_crates//:dotenv",
+ 
     ],
 )
 
