@@ -2,3 +2,4 @@ bazel*
 target-bzl/
 .ijwb/
 .idea
+warehouse-state/target/
