@@ -1,6 +1,13 @@
 load("@rules_rust//rust:defs.bzl", "rust_clippy", "rust_library", "rust_test")
+load("@envfile//:environment.bzl", "SOME_ENV")
 
 package(default_visibility = ["//visibility:public"])
+
+genrule(
+  name = "gen_env",
+  outs = [ "env.txt" ],
+  cmd = "FOOBAR=\"42\" > $@",
+)
 
 rust_library(
     name = "lib",
@@ -13,5 +20,5 @@ rust_library(
 rust_test(
    name = "unit",
    crate = "lib",
-   rustc_env_files = ["//:.env"],
+   rustc_env = { "SOME_ENV": SOME_ENV,},
 )
